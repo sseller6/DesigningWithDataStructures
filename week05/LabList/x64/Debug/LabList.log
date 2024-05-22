@@ -1,0 +1,26 @@
+﻿  testList.cpp
+C:\programmingProjects\PublicRepos\cse232\week05\232.05.Lab.100\testList.h(135,17): warning C4312: 'type cast': conversion from 'unsigned int' to 'custom::list<int>::Node *' of greater size
+  (compiling source file 'testList.cpp')
+  
+C:\programmingProjects\PublicRepos\cse232\week05\232.05.Lab.100\testList.h(136,17): warning C4312: 'type cast': conversion from 'unsigned int' to 'custom::list<int>::Node *' of greater size
+  (compiling source file 'testList.cpp')
+  
+C:\programmingProjects\PublicRepos\cse232\week05\232.05.Lab.100\testList.h(149,17): warning C4312: 'type cast': conversion from 'unsigned int' to 'custom::list<int>::Node *' of greater size
+  (compiling source file 'testList.cpp')
+  
+C:\programmingProjects\PublicRepos\cse232\week05\232.05.Lab.100\testList.h(150,17): warning C4312: 'type cast': conversion from 'unsigned int' to 'custom::list<int>::Node *' of greater size
+  (compiling source file 'testList.cpp')
+  
+C:\programmingProjects\PublicRepos\cse232\week05\232.05.Lab.100\testList.h(163,17): warning C4312: 'type cast': conversion from 'unsigned int' to 'custom::list<int>::Node *' of greater size
+  (compiling source file 'testList.cpp')
+  
+C:\programmingProjects\PublicRepos\cse232\week05\232.05.Lab.100\testList.h(164,17): warning C4312: 'type cast': conversion from 'unsigned int' to 'custom::list<int>::Node *' of greater size
+  (compiling source file 'testList.cpp')
+  
+C:\programmingProjects\PublicRepos\cse232\week05\232.05.Lab.100\testList.h(202,17): warning C4312: 'type cast': conversion from 'unsigned int' to 'custom::list<int>::Node *' of greater size
+  (compiling source file 'testList.cpp')
+  
+C:\programmingProjects\PublicRepos\cse232\week05\232.05.Lab.100\testList.h(203,17): warning C4312: 'type cast': conversion from 'unsigned int' to 'custom::list<int>::Node *' of greater size
+  (compiling source file 'testList.cpp')
+  
+  LabList.vcxproj -> C:\programmingProjects\PublicRepos\cse232\week05\232.05.Lab.100\x64\Debug\LabList.exe
