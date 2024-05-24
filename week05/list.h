@@ -277,8 +277,19 @@ list <T> ::list(Iterator first, Iterator last)
 template <typename T>
 list <T> ::list(const std::initializer_list<T>& il)
 {
-   pHead = pTail = nullptr;
-   numElements = 0;
+   if (il.size() == 0) return;
+
+   auto it = il.begin();
+   pHead = new Node(*it);
+   Node* current = pHead;
+   for (++it; it != il.end(); ++it)
+   {
+      current->pNext = new Node(*it);
+      current->pNext->pPrev = current;
+      current = current->pNext;
+   }
+   pTail = current;
+   numElements = il.size(); 
 }
 
 /*****************************************
@@ -350,10 +361,20 @@ list <T> ::list(list <T>&& rhs)
 template <typename T>
 list <T>& list <T> :: operator = (list <T> && rhs)
 {
-   this->pHead = rhs.pHead;
-   this->pTail = rhs.pTail;
-   this->numElements = std::move(rhs.numElements);
-   return *this;
+   if (this != &rhs)
+   {
+      clear();
+
+      this->pHead = rhs.pHead;
+      this->pTail = rhs.pTail;
+      this->numElements = rhs.numElements;
+
+      rhs.pHead = nullptr;
+      rhs.pTail = nullptr;
+      rhs.numElements = 0;
+      return *this;
+   }
+
 }
 
 /**********************************************
@@ -366,9 +387,25 @@ list <T>& list <T> :: operator = (list <T> && rhs)
 template <typename T>
 list <T> & list <T> :: operator = (list <T> & rhs)
 {
-   this->pHead = rhs.pHead;
-   this->pTail = rhs.pTail;
-   this->numElements = rhs.numElements;
+   if (this != &rhs)
+   {
+      clear();
+      if (rhs.pHead)
+      {
+         pHead = new Node(rhs.pHead->data);
+         Node* src = rhs.pHead->pNext;
+         Node* dst = pHead;
+         while (src != nullptr)
+         {
+            dst->pNext = new Node(src->data);
+            dst->pNext->pPrev = dst;
+            dst = dst->pNext;
+            src = src->pNext;
+         }
+         pTail = dst;
+         numElements = rhs.numElements;
+      }
+   }
    return *this;
 }
 
