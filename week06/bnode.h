@@ -37,15 +37,18 @@ public:
    //
    BNode()
    {
-      pLeft = pRight = this;
+      pParent = pLeft = pRight = nullptr;
+      data = T();
    }
    BNode(const T& t)
    {
-      pLeft = pRight = this;
+      pParent = pLeft = pRight = nullptr;
+      data = t;
    }
    BNode(T&& t)
    {
-      pLeft = pRight = this;
+      pParent = pLeft = pRight = nullptr;
+      data = std::move(t);
    }
 
    //
@@ -62,9 +65,16 @@ public:
  * Return the size of a b-tree under the current node
  *******************************************************************/
 template <class T>
-inline size_t size(const BNode <T> * p)
+inline size_t size(const BNode <T>* p)
 {
-   return 99;
+   if (p == nullptr)
+   {
+      return 0;
+   }
+   else
+   {
+      return size(p->pLeft) + 1 + size(p->pRight);
+   }
 }
 
 
@@ -75,7 +85,11 @@ inline size_t size(const BNode <T> * p)
 template <class T>
 inline void addLeft(BNode <T> * pNode, BNode <T> * pAdd)
 {
-
+   if (pAdd)
+   {
+      pAdd->pParent = pNode;
+   }
+   pNode->pLeft = pAdd;
 }
 
 /******************************************************
@@ -85,7 +99,11 @@ inline void addLeft(BNode <T> * pNode, BNode <T> * pAdd)
 template <class T>
 inline void addRight (BNode <T> * pNode, BNode <T> * pAdd)
 {
-
+   if (pAdd)
+   {
+      pAdd->pParent = pNode;
+   }
+   pNode->pRight = pAdd;
 }
 
 /******************************************************
@@ -95,13 +113,17 @@ inline void addRight (BNode <T> * pNode, BNode <T> * pAdd)
 template <class T>
 inline void addLeft (BNode <T> * pNode, const T & t)
 {
-
+   BNode<T>* pAdd = new BNode<T>(t);
+   pAdd->pParent = pNode;
+   pNode->pLeft = pAdd;
 }
 
 template <class T>
 inline void addLeft(BNode <T>* pNode, T && t)
 {
-
+   BNode<T>* pAdd = new BNode<T>(std::move(t));
+   pAdd->pParent = pNode;
+   pNode->pLeft = pAdd;
 }
 
 /******************************************************
@@ -111,13 +133,17 @@ inline void addLeft(BNode <T>* pNode, T && t)
 template <class T>
 void addRight (BNode <T> * pNode, const T & t)
 {
-
+   BNode<T>* pAdd = new BNode<T>(t);
+   pAdd->pParent = pNode;
+   pNode->pRight = pAdd;
 }
 
 template <class T>
 void addRight(BNode <T>* pNode, T && t)
 {
-
+   BNode<T>* pAdd = new BNode<T>(std::move(t));
+   pAdd->pParent = pNode;
+   pNode->pRight = pAdd;
 }
 
 /*****************************************************
@@ -128,7 +154,14 @@ void addRight(BNode <T>* pNode, T && t)
 template <class T>
 void clear(BNode <T> * & pThis)
 {
-
+   if (pThis == nullptr)
+   {
+      return;
+   }
+   clear(pThis->pLeft);
+   clear(pThis->pRight);
+   delete pThis;
+   pThis = nullptr;
 }
 
 /***********************************************
@@ -139,7 +172,9 @@ void clear(BNode <T> * & pThis)
 template <class T>
 inline void swap(BNode <T>*& pLHS, BNode <T>*& pRHS)
 {
-
+   BNode <T>* pTemp = pLHS;
+   pLHS = pRHS;
+   pRHS = pTemp;
 }
 
 /**********************************************
@@ -150,7 +185,16 @@ inline void swap(BNode <T>*& pLHS, BNode <T>*& pRHS)
 template <class T>
 BNode <T> * copy(const BNode <T> * pSrc)
 {
-   return new BNode<T>;
+   if (!pSrc)
+   {
+      return nullptr;
+   }
+
+   BNode <T>* pDest = new BNode <T>;
+   pDest->pParent = pSrc->pParent;
+   pDest->pRight = pSrc->pRight;
+   pDest->pLeft = pSrc->pLeft;
+   return pDest;
 }
 
 /**********************************************
