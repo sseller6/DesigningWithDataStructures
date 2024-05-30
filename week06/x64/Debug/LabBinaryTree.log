@@ -1,0 +1,11 @@
+﻿  testBNode.cpp
+C:\git\desktop_version_wdd\public_programming_projects\cse_232\week06\testBNode.h(87,1): warning C4312: 'type cast': conversion from 'unsigned int' to 'BNode<int> *' of greater size
+C:\git\desktop_version_wdd\public_programming_projects\cse_232\week06\testBNode.h(88,1): warning C4312: 'type cast': conversion from 'unsigned int' to 'BNode<int> *' of greater size
+C:\git\desktop_version_wdd\public_programming_projects\cse_232\week06\testBNode.h(89,1): warning C4312: 'type cast': conversion from 'unsigned int' to 'BNode<int> *' of greater size
+C:\git\desktop_version_wdd\public_programming_projects\cse_232\week06\testBNode.h(107,1): warning C4312: 'type cast': conversion from 'unsigned int' to 'BNode<int> *' of greater size
+C:\git\desktop_version_wdd\public_programming_projects\cse_232\week06\testBNode.h(108,1): warning C4312: 'type cast': conversion from 'unsigned int' to 'BNode<int> *' of greater size
+C:\git\desktop_version_wdd\public_programming_projects\cse_232\week06\testBNode.h(109,1): warning C4312: 'type cast': conversion from 'unsigned int' to 'BNode<int> *' of greater size
+C:\git\desktop_version_wdd\public_programming_projects\cse_232\week06\testBNode.h(129,1): warning C4312: 'type cast': conversion from 'unsigned int' to 'BNode<int> *' of greater size
+C:\git\desktop_version_wdd\public_programming_projects\cse_232\week06\testBNode.h(130,1): warning C4312: 'type cast': conversion from 'unsigned int' to 'BNode<int> *' of greater size
+C:\git\desktop_version_wdd\public_programming_projects\cse_232\week06\testBNode.h(131,1): warning C4312: 'type cast': conversion from 'unsigned int' to 'BNode<int> *' of greater size
+  LabBinaryTree.vcxproj -> C:\git\desktop_version_wdd\public_programming_projects\cse_232\week06\x64\Debug\LabBinaryTree.exe
