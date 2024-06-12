@@ -1,0 +1,8 @@
+﻿  testSet.cpp
+C:\programmingProjects\PublicRepos\cse232\GitHubRepo\week08\testBST.h(124,18): warning C4312: 'type cast': conversion from 'unsigned int' to 'custom::BST<Spy>::BNode *' of greater size
+  (compiling source file 'testSet.cpp')
+  
+C:\programmingProjects\PublicRepos\cse232\GitHubRepo\week08\testBST.h(149,22): warning C4312: 'type cast': conversion from 'unsigned int' to 'custom::BST<Spy>::BNode *' of greater size
+  (compiling source file 'testSet.cpp')
+  
+  LabSet.vcxproj -> C:\programmingProjects\PublicRepos\cse232\GitHubRepo\week08\x64\Debug\LabSet.exe
