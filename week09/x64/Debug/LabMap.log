@@ -1,0 +1,4 @@
+﻿  testMap.cpp
+C:\git\desktop_version_wdd\public_programming_projects\cse_232_current\DesigningWithDataStructures\week09\testBST.h(124,1): warning C4312: 'type cast': conversion from 'unsigned int' to 'custom::BST<Spy>::BNode *' of greater size
+C:\git\desktop_version_wdd\public_programming_projects\cse_232_current\DesigningWithDataStructures\week09\testBST.h(149,1): warning C4312: 'type cast': conversion from 'unsigned int' to 'custom::BST<Spy>::BNode *' of greater size
+  LabMap.vcxproj -> C:\git\desktop_version_wdd\public_programming_projects\cse_232_current\DesigningWithDataStructures\week09\x64\Debug\LabMap.exe
